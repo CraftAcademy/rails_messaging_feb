@@ -13,5 +13,5 @@ before_script:
   - psql -c 'create database rails_messaging_test;' -U postgres
   - bundle exec rails db:migrate
 script:
-  - bundle exec cucumber
   - bundle exec rspec
+  - bundle exec cucumber
