@@ -6,10 +6,12 @@ rvm:
 cache:
   - bundler
   - apt
+sudo: required
 addons:
   postgresql: '9.5'
 before_script:
-  - bundle exec rake db:setup
+  - psql -c 'create database rails_messaging_test;' -U postgres
+  - bundle exec rails db:migrate
 script:
   - bundle exec cucumber
   - bundle exec rspec
