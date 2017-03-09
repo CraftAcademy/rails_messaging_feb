@@ -1,4 +1,4 @@
-Given(/^I am on the welcome_index page$/) do
+Given(/^I am on the welcome page$/) do
   visit welcome_index_path
 end
 
