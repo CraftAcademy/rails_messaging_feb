@@ -15,3 +15,11 @@ before_script:
 script:
   - bundle exec rspec
   - bundle exec cucumber
+deploy:
+  provider: heroku
+  app: rails-messaging-feb
+  on: develop
+  api_key:
+    secure: sJTfvu4Ma1P7erj7wFmZUzbtHRmVkmRRHQ5AAacC4a2LG7QZny4i9gzyQ2mAks6leVs9hbgsvk+ndgVcA7j2OYLOAa+ehT8H8CXxRzWLJZE8NhoB3SJc6EVIhInj7lpoikHLt1OIP2Q5Z79itC3fSnjKayWJy6y1LzY7zZNHzDKVY6DEJ5X+YsmFgNQ+eae1S1gU9pyFMjBJKV3s+yhpfWJRU3XK2LB8YQlORGXJfa67cseadAlx2j/gx9wBps0foYMVpUy8ijoXO/ax8Ckk8ZGD0L6nCkbgW2iHubKSwdHYw80LWmMZ9qR+lQleoTOVO1b/X3otBg5L8ZfIZCdQ9LS7WMGa2Eeu1pEnbAASmDcwC9CKuXATB+3yBIi8YV0C4KpRRFqwiKLmX+dzCEvyZAYSB5wJ4l4YFTjQX/wR+m2sNLI8AjpqGWJ6I/PYx4aQx28EvKGJrQsPC0GHgwZINfG9dZ7XUgPjSP8yRQ3i1/Xjdi2O26DCrhddWnG0Uu/yIAxQQ2nxItlI3nlECQ7Zm/AMZOx/7bJzSOtxjr044Iga44WceOPzJQs9U/SY81OWUaKy/+wSpKSg7+tXNr94kGs5c05gVep/UtSaG8heDwq86LDVDH1+fcWjbYDWnakLlFhm/iJfEwqQtw6yKp6vsps/BryVa46+lixdIRXrxTE=
+  run:
+    - rails db:migrate
