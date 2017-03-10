@@ -13,6 +13,7 @@ Scenario: If I am logged in
   Given I am on the welcome page
   And I click "Inbox"
   Then I am on the inbox page
+  And I should see "felix" count "0"
   And I send a mail from "felix" to "fabbe"
   Given I am logged in as "fabbe"
   Given I am on the welcome page
