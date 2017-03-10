@@ -12,6 +12,12 @@ Scenario: If I am logged in
   Given I am logged in as "felix"
   Given I am on the welcome page
   And I click "Inbox"
-  Then I should be on inbox page
-  And I send a mail from "fabbe" to "felix"
+  Then I am on the inbox page
+  And I send a mail from "felix" to "fabbe"
+  Given I am logged in as "fabbe"
+  Given I am on the welcome page
+  And I click "Inbox"
+  Then I am on the inbox page
   Then I should have "1" messages
+  And I click "View"
+  Then I should see "Lorem ipsum..."
