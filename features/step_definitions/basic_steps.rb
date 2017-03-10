@@ -14,5 +14,10 @@ Then(/^I fill in "([^"]*)" with "([^"]*)"$/) do |title, content|
   fill_in title, with: content
 end
 
+Then(/^show me the page$/) do
+  save_and_open_page
+end
 
-
+Given(/^I select "([^"]*)" from "([^"]*)"$/) do |option, select|
+  select option, from: select
+end
